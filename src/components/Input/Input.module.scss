@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+
+.error {
+  border: 1px $error solid;
+}
+
+.inputContainer {
+  margin-bottom: 32px;
+}
+
+.labelTxt,
+.inputTxt {
+  display: block;
+  width: 100%;
+}
+
+.inputTxt {
+  font-weight: normal;
+  font-size: $form-input-size;
+  color: $black;
+  background: inherit;
+  padding: $form-input-padding;
+  margin: $form-input-margin;
+  border: 1px solid rgba(151, 151, 151, 0.2);
+  border-radius: $form-input-radius;
+
+  &:focus {
+    outline: none;
+    border: 1px solid rgba(151, 151, 151, 0.7);
+  }
+}
+
+.labelTxt {
+  font-size: $form-label-size;
+  color: $white;
+  position: relative;
+  font-family: $verdana;
+
+  .inputTxt {
+    font-family: $helvetica;
+  }
+}
+
+.errorText {
+  color: $error;
+  font-size: $form-text-large;
+  margin-top: -2px;
+  display: block;
+  font-family: $helvetica;
+  line-height: 16px;
+}

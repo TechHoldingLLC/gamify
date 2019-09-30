@@ -1,0 +1,28 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/button-has-type */
+import React from 'react';
+import PropTypes from 'prop-types';
+import s from './Button.module.scss';
+
+const propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  type: PropTypes.string,
+  theme: PropTypes.string,
+};
+
+const defaultProps = {
+  className: '',
+  type: 'button',
+  theme: 'default',
+};
+
+const Button = ({ className, children, type, theme, ...props }) => (
+  <button type={type} className={[s.btn, s[theme], className].join(' ')} {...props}>
+    {children}
+  </button>
+);
+
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
+export default Button;

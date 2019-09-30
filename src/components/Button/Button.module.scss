@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  cursor: pointer;
+  padding: 12px 22px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.primary {
+  background-color: $blue;
+  color: white;
+}
+
+.default {
+  background-color: white;
+  color: black;
+  border: 1px solid #6c757d;
+}

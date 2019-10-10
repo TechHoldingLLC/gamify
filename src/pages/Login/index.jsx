@@ -12,6 +12,7 @@ const Login = ({ history }) => {
   const [userName, setUserName] = useState('');
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem('user', JSON.stringify({ name: userName }));
     history.push(`/game/${userName}`);
   };
 

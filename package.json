@@ -17,8 +17,6 @@
     "lint:scss": "stylelint './src/**/*.scss'",
     "pretest": "npm audit ; npm run lint:scss && npm run lint:js",
     "test": "react-scripts test",
-    "test:ci": "npm test -- -i --watchAll=false",
-    "test:ci-cov": "npm test -- -i --watchAll=false --coverage",
     "build": "react-app-rewired build",
     "eject": "react-scripts eject"
   },

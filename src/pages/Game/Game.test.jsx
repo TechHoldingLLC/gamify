@@ -3,7 +3,13 @@ import { shallow } from 'enzyme';
 import Game from './index';
 
 describe('Game component', () => {
+  const match = {
+    params: {
+      username: 'abc',
+    },
+  };
+
   it('renders without crashing', () => {
-    shallow(<Game />);
+    shallow(<Game match={match} />);
   });
 });

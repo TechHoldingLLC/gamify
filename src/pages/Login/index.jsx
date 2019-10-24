@@ -24,7 +24,7 @@ const Login = ({ history }) => {
     <div className={s.root}>
       <form onSubmit={handleOnSubmit}>
         <Input name="username" value={userName} onChange={handleInputChange} />
-        <Button type={'submit'}>Submit</Button>
+        <Button type="submit">Submit</Button>
       </form>
     </div>
   );

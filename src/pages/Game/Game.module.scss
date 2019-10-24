@@ -4,3 +4,22 @@
   justify-content: center;
   align-items: center;
 }
+.game {
+  background: black;
+  color: white;
+  height: 96vh;
+  width: 100%;
+}
+
+.header {
+  margin: 0;
+}
+
+.gameBoard {
+  background: white;
+  color: black;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px 315px;
+}

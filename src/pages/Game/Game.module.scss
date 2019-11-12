@@ -1,25 +1,89 @@
 .root {
-  height: 100vh;
+  height: 93%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .game {
-  background: black;
   color: white;
-  height: 96vh;
+  height: 95%;
   width: 100%;
+  font-size: 25px;
+}
+
+.gameBoard {
+  color: black;
+  height: 95%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 0 25%;
+}
+
+.modalTitle {
+  margin: 0;
+}
+
+.popupHeader {
+  text-align: left;
+}
+
+.popupMessage {
+  text-align: left;
+}
+
+.username {
+  text-transform: capitalize;
+  padding-top: 5px;
+}
+
+.playButton {
+  position: fixed;
+  bottom: -40px;
+  left: 20%;
+  box-shadow: 0 20px 34px 0 #001957;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.score {
+  //position: absolute;
+  //top: 10px;
+  //left: 20%;
+}
+
+.attempts {
+  //position: absolute;
+  //top: 10px;
+  //left: 10%;
+}
+
+.timer {
+  //position: absolute;
+  //top: 10px;
+  //left: 30%;
 }
 
 .header {
   margin: 0;
+  display: flex;
+  background: transparent;
+  padding-top: 10px;
+  height: 40px;
 }
 
-.gameBoard {
-  background: white;
-  color: black;
-  height: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px 315px;
+.leftHeader,
+.rightHeader {
+  list-style: none;
+  margin: 0;
+  flex: 0.5;
+}
+
+.leftHeader li {
+  float: left;
+  padding: 5px 40px 0 0;
+}
+
+.rightHeader li {
+  float: right;
+  padding-right: 40px;
 }

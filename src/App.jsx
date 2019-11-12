@@ -6,16 +6,19 @@ import Game from './pages/Game';
 import { HOME_PAGE, GAME_PATH, LOGOUT } from './constants/routes';
 import withAuthCheck from './hocs/withAuthCheck';
 import Logout from './pages/Logout';
+import { Catch } from './components/Catch/Catch';
 
 const App = () => (
-  <Router>
-    <Switch>
-      <Route exact path={HOME_PAGE} component={withAuthCheck(Login, false)} />
-      <Route exact path={GAME_PATH} component={withAuthCheck(Game, true)} />
-      <Route exact path={LOGOUT} component={withAuthCheck(Logout, true)} />
-      <Route component={Error404} />
-    </Switch>
-  </Router>
+  <Catch>
+    <Router>
+      <Switch>
+        <Route exact path={HOME_PAGE} component={withAuthCheck(Login, false)} />
+        <Route exact path={GAME_PATH} component={withAuthCheck(Game, true)} />
+        <Route exact path={LOGOUT} component={withAuthCheck(Logout, true)} />
+        <Route component={Error404} />
+      </Switch>
+    </Router>
+  </Catch>
 );
 
 export default App;

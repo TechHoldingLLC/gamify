@@ -1,13 +1,5 @@
 @import '../../styles/variables.scss';
 
-.btn {
-  cursor: pointer;
-  padding: 12px 22px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
 .primary {
   background-color: $blue;
   color: white;
@@ -16,24 +8,19 @@
 .danger {
   background: linear-gradient(145.36deg, #b81553 0%, #cf4c4c 100%);
   color: white;
+  text-decoration: none;
 }
 
 .success {
   background: linear-gradient(309.85deg, #7ab01c 0%, #429321 100%);
   color: white;
+  text-decoration: none;
 }
 
 .default {
   background-color: white;
   border: 1px solid #6c757d;
-}
-
-.bg {
-  height: 55px;
-  width: 106px;
-  border-radius: 49px;
-  background: linear-gradient(145.36deg, #b81553 0%, #cf4c4c 100%);
-  box-shadow: 0 20px 34px 0 #001957;
+  color: black;
 }
 
 .lg {
@@ -44,15 +31,13 @@
 }
 
 .md {
-  width: 150px;
-  height: 50px;
+  padding: 10px 30px;
   font-size: 20px;
   border-radius: 50px;
 }
 
 .sm {
-  width: 100px;
-  height: 50px;
+  padding: 10px 30px;
   font-size: 20px;
   border-radius: 50px;
 }

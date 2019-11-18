@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import Default from '../../layouts/Default';
 
-export class Catch extends React.Component {
+export class Catch extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };

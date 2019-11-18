@@ -1,5 +1,8 @@
 import React from 'react';
-import { sampleSize, cloneDeep, shuffle, concat } from 'lodash';
+import sampleSize from 'lodash/sampleSize';
+import cloneDeep from 'lodash/cloneDeep';
+import shuffle from 'lodash/shuffle';
+import concat from 'lodash/concat';
 import data from '../data/data';
 
 export const defaultWaitingTime = 10;

@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .card {
   background-color: transparent;
   perspective: 1000px;
@@ -9,9 +11,6 @@
 }
 
 .open {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -26,13 +25,13 @@
 }
 
 .matched {
-  border: 8px solid #d1eac3;
+  border: 8px solid $success-light;
   border-radius: 10px;
   height: 95% !important;
 }
 
 .notMatched {
-  border: 8px solid #ffd2d5;
+  border: 8px solid $error-light;
   border-radius: 10px;
   height: 95% !important;
 }
@@ -92,7 +91,7 @@ h1 {
   height: 50px;
   width: 150px;
   border-radius: 35.5px;
-  background-color: #d1eac3;
+  background-color: $success-light;
   position: absolute;
   bottom: -25px;
   left: 15%;
@@ -118,7 +117,7 @@ h1 {
   height: 50px;
   width: 150px;
   border-radius: 35.5px;
-  background-color: #ffd2d5;
+  background-color: $error-light;
   position: absolute;
   bottom: -25px;
   left: 15%;
@@ -136,6 +135,6 @@ h1 {
     top: 32%;
     left: 35%;
     font-weight: bold;
-    color: #e24c4b;
+    color: $error-dark;
   }
 }

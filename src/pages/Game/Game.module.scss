@@ -19,10 +19,6 @@
   padding: 0 25%;
 }
 
-.modalTitle {
-  margin: 0;
-}
-
 .popupHeader {
   text-align: left;
 }
@@ -34,33 +30,6 @@
 .username {
   text-transform: capitalize;
   padding-top: 5px;
-}
-
-.playButton {
-  position: fixed;
-  bottom: -40px;
-  left: 20%;
-  box-shadow: 0 20px 34px 0 #001957;
-  font-size: 25px;
-  line-height: 30px;
-}
-
-.score {
-  //position: absolute;
-  //top: 10px;
-  //left: 20%;
-}
-
-.attempts {
-  //position: absolute;
-  //top: 10px;
-  //left: 10%;
-}
-
-.timer {
-  //position: absolute;
-  //top: 10px;
-  //left: 30%;
 }
 
 .header {

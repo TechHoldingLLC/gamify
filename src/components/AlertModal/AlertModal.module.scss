@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.modalTitle {
+  margin: 0;
+}
+
+.playButton {
+  position: fixed;
+  bottom: -40px;
+  left: 20%;
+  box-shadow: 0 20px 34px 0 $prussian-blue;
+  font-size: 25px;
+  line-height: 30px;
+}

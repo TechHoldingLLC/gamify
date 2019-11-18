@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTimer } from 'use-timer';
 import s from './Timer.module.scss';
 
-export const Timer = ({ onTimeout, playing, defaultPlayTime }) => {
+const Timer = ({ onTimeout, playing, defaultPlayTime }) => {
   const { time, start, pause } = useTimer({
     initialTime: defaultPlayTime,
     timerType: 'DECREMENTAL',
@@ -17,5 +17,7 @@ export const Timer = ({ onTimeout, playing, defaultPlayTime }) => {
     }
   }, [time, start, defaultPlayTime, onTimeout, playing, pause]);
 
-  return <div className={s.timer}>Time: {time}s</div>;
+  return <div className={s.timer}>{`Time: ${time}s`}</div>;
 };
+
+export default Timer;

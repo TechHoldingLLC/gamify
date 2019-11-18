@@ -9,16 +9,24 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.string,
   theme: PropTypes.string,
+  size: PropTypes.string,
+  color: PropTypes.string,
 };
 
 const defaultProps = {
   className: '',
   type: 'button',
   theme: 'default',
+  size: '',
+  color: '',
 };
 
 const Button = ({ className, children, type, theme, size, color, ...props }) => (
-  <button type={type} className={[s.btn, s[theme], className, s[color], s[size]].join(' ')} {...props}>
+  <button
+    type={type}
+    className={[s.btn, s[theme], className, s[color], s[size]].join(' ')}
+    {...props}
+  >
     {children}
   </button>
 );

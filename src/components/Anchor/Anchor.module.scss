@@ -2,25 +2,25 @@
 
 .primary {
   background-color: $blue;
-  color: white;
+  color: $white;
 }
 
 .danger {
-  background: linear-gradient(145.36deg, #b81553 0%, #cf4c4c 100%);
-  color: white;
+  background: linear-gradient(145.36deg, $maroon-flush 0%, $chestnut-rose 100%);
+  color: $white;
   text-decoration: none;
 }
 
 .success {
-  background: linear-gradient(309.85deg, #7ab01c 0%, #429321 100%);
-  color: white;
+  background: linear-gradient(309.85deg, $lima 0%, $vida-loca 100%);
+  color: $white;
   text-decoration: none;
 }
 
 .default {
-  background-color: white;
-  border: 1px solid #6c757d;
-  color: black;
+  background-color: $white;
+  border: 1px solid $pale-sky;
+  color: $black;
 }
 
 .lg {

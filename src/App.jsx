@@ -6,7 +6,7 @@ import Game from './pages/Game';
 import { HOME_PAGE, GAME_PATH, LOGOUT } from './constants/routes';
 import withAuthCheck from './hocs/withAuthCheck';
 import Logout from './pages/Logout';
-import { Catch } from './components/Catch/Catch';
+import Catch from './components/Catch';
 
 const App = () => (
   <Catch>

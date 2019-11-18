@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/button-has-type */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import s from './Button.module.scss';
+import s from './Anchor.module.scss';
 
 const propTypes = {
   className: PropTypes.string,
@@ -17,12 +18,12 @@ const defaultProps = {
   theme: 'default',
 };
 
-const Button = ({ className, children, type, theme, size, color, ...props }) => (
-  <button type={type} className={[s.btn, s[theme], className, s[color], s[size]].join(' ')} {...props}>
+const Anchor = ({ className, children, type, theme, size, color, ...props }) => (
+  <Link type={type} className={[s.btn, s[theme], className, s[color], s[size]].join(' ')} {...props}>
     {children}
-  </button>
+  </Link>
 );
 
-Button.propTypes = propTypes;
-Button.defaultProps = defaultProps;
-export default Button;
+Link.propTypes = propTypes;
+Link.defaultProps = defaultProps;
+export default Anchor;

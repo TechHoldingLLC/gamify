@@ -1,0 +1,19 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic, 700italic, 400, 700');
+@import '../../styles/variables.scss';
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: $muli;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.bg {
+  background-image: url('../../assets/images/pngs/bg-card-pattern.png'),
+    linear-gradient(134.28deg, #143fa5 0%, #4c71c9 100%);
+  color: white;
+  height: 100vh;
+  width: 100%;
+  font-size: 25px;
+}

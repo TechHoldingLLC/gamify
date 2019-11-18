@@ -1,0 +1,140 @@
+@import '../../styles/variables.scss';
+
+.card {
+  background-color: transparent;
+  perspective: 1000px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  float: left;
+  height: 300px;
+  width: 210px;
+}
+
+.open {
+  transform: rotateY(180deg);
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.matched {
+  border: 8px solid $success-light;
+  border-radius: 10px;
+  height: 95% !important;
+}
+
+.notMatched {
+  border: 8px solid $error-light;
+  border-radius: 10px;
+  height: 95% !important;
+}
+
+.front {
+  background: center url('../../assets/images/svgs/card-pattern.svg');
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-box-shadow: 9px 9px 18px -2px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 9px 9px 18px -2px rgba(0, 0, 0, 0.69);
+  box-shadow: 9px 9px 18px -2px rgba(0, 0, 0, 0.69);
+}
+
+.back {
+  background: white;
+  position: absolute;
+  border-radius: 10px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-size: 62px;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-box-shadow: 9px 9px 18px -2px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 9px 9px 18px -2px rgba(0, 0, 0, 0.69);
+  box-shadow: 9px 9px 18px -2px rgba(0, 0, 0, 0.69);
+}
+
+.backInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.cardTop {
+  height: 20%;
+}
+
+.cardBottom {
+  height: 20%;
+}
+
+.cardMiddle {
+  height: 50%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.right {
+  height: 50px;
+  width: 150px;
+  border-radius: 35.5px;
+  background-color: $success-light;
+  position: absolute;
+  bottom: -25px;
+  left: 15%;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: right;
+  margin-top: 10px;
+
+  svg {
+    position: absolute;
+    left: 0;
+  }
+  span {
+    position: absolute;
+    top: 32%;
+    left: 41%;
+    font-weight: bold;
+    color: green;
+  }
+}
+
+.wrong {
+  height: 50px;
+  width: 150px;
+  border-radius: 35.5px;
+  background-color: $error-light;
+  position: absolute;
+  bottom: -25px;
+  left: 15%;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: right;
+  margin-top: 10px;
+
+  svg {
+    position: absolute;
+    left: 0;
+  }
+  span {
+    position: absolute;
+    top: 32%;
+    left: 35%;
+    font-weight: bold;
+    color: $error-dark;
+  }
+}

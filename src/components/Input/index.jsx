@@ -24,12 +24,7 @@ const Input = ({ type, isError, errorText, name, label, ...props }) => (
   <div className={s.inputContainer}>
     <span>{label}</span>
     <label className={s.labelTxt} htmlFor={name}>
-      <input
-        type={type}
-        className={[s.inputTxt, isError ? s.error : ''].join(' ')}
-        name={name}
-        {...props}
-      />
+      <input type={type} className={[s.inputTxt, isError ? s.error : ''].join(' ')} name={name} {...props} />
     </label>
     {isError && errorText && <span className={s.errorText}>{errorText}</span>}
   </div>

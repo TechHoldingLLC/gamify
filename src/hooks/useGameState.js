@@ -1,26 +1,34 @@
-import React from 'react';
+/* eslint-disable no-param-reassign */
+import { useState } from 'react';
 import sampleSize from 'lodash/sampleSize';
 import cloneDeep from 'lodash/cloneDeep';
 import shuffle from 'lodash/shuffle';
 import concat from 'lodash/concat';
 import data from '../data/data';
+import { EASY, MEDIUM, HARD } from '../constants/difficulty';
 
 export const defaultWaitingTime = 10;
 export const defaultTimeout = 2;
 export const defaultCards = 6;
 export const defaultPlayTime = 60;
 
-export const useGameState = () => {
-  let [numOfCards] = React.useState(defaultCards);
-  let [allOpen, setAllOpen] = React.useState(true);
-  let [lock, setLock] = React.useState(true);
-  let [playing, setPlaying] = React.useState(0);
-  let [selected, setSelected] = React.useState(null);
-  let [timeTaken, setTimeTaken] = React.useState(0);
-  let [score, setScore] = React.useState(0);
-  let [cards, setCards] = React.useState([]);
-  let [attempts, setAttempts] = React.useState(0);
-  let [isModalOpen, setIsModalOpen] = React.useState(true);
+const difficulties = {
+  [EASY]: 6,
+  [MEDIUM]: 12,
+  [HARD]: 18,
+};
+
+export const useGameState = (difficulty) => {
+  const [numOfCards] = useState(difficulties[difficulty] ? difficulties[difficulty] : defaultCards);
+  const [allOpen, setAllOpen] = useState(true);
+  const [lock, setLock] = useState(true);
+  const [playing, setPlaying] = useState(0);
+  const [selected, setSelected] = useState(null);
+  const [timeTaken, setTimeTaken] = useState(0);
+  const [score, setScore] = useState(0);
+  const [cards, setCards] = useState([]);
+  const [attempts, setAttempts] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -71,25 +79,33 @@ export const useGameState = () => {
       setSelected(index);
       setCards(cards);
       setLock(false);
-    } else if (selected !== null && index !== selected && cards[index].key === cards[selected].key) {
+    } else if (
+      selected !== null &&
+      index !== selected &&
+      cards[index].key === cards[selected].key
+    ) {
       cards[index].open = true;
       cards[index].matched = true;
       cards[selected].matched = true;
       setSelected(null);
-      setScore(++score);
-      setAttempts(++attempts);
+      setScore(score + 1);
+      setAttempts(attempts + 1);
       setCards(cards);
       if (score === numOfCards / 2) {
         setTimeout(() => setPlaying(2), defaultTimeout * 1000);
       }
       setLock(false);
-    } else if (selected !== null && index !== selected && cards[index].key !== cards[selected].key) {
+    } else if (
+      selected !== null &&
+      index !== selected &&
+      cards[index].key !== cards[selected].key
+    ) {
       cards[index].open = true;
       cards[index].notMatched = true;
       cards[selected].notMatched = true;
       const prev = selected;
       setSelected(index);
-      setAttempts(++attempts);
+      setAttempts(attempts + 1);
       setCards(cards);
       setTimeout(() => {
         cards[index].open = false;

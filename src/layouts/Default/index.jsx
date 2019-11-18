@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './Default.module.scss';
 import Footer from '../../components/Footer';
+
+const propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 const Default = ({ children }) => {
   return (
@@ -10,5 +15,5 @@ const Default = ({ children }) => {
     </div>
   );
 };
-
+Default.propTypes = propTypes;
 export default Default;

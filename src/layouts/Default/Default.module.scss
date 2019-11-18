@@ -2,17 +2,18 @@
 @import '../../styles/variables.scss';
 
 body {
+  padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow: scroll;
   font-family: $muli;
   font-weight: normal;
   font-size: 16px;
 }
 
 .bg {
-  background-image: url('../../assets/images/pngs/bg-card-pattern.png'),
-    linear-gradient(134.28deg, #143fa5 0%, #4c71c9 100%);
-  color: white;
+  background-image: url('./bg-card-pattern.png'),
+    linear-gradient(134.28deg, $tory-blue 0%, $indigo 100%);
+  color: $white;
   height: 100vh;
   width: 100%;
   font-size: 25px;

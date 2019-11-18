@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="50px" height="44px" viewBox="0 0 200 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="200px" height="176px" viewBox="0 0 200 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>4C7A446C-78F7-4599-8849-14568D3D67FC</title>
+    <title>446113F1-E088-4AC3-B8C4-3CB863D7E2F8</title>
     <desc>Created with sketchtool.</desc>
     <defs>
         <linearGradient x1="42.8326361%" y1="41.5717334%" x2="127.607549%" y2="141.725871%" id="linearGradient-1">
@@ -126,7 +126,7 @@
         </filter>
     </defs>
     <g id="Game" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="000-Start-Game" transform="translate(-860.000000, -80.000000)">
+        <g id="0-Start-Game" transform="translate(-860.000000, -80.000000)">
             <g id="hand-logo" transform="translate(860.000000, 80.000000)">
                 <g id="poker-cards" transform="translate(23.546945, 0.000000)">
                     <path d="M132.910538,92.680962 L87.3465626,82.9960364 C85.3683434,82.5756161 84.1055866,80.6312101 84.5260068,78.6529909 L99.7999778,6.79524736 C100.220398,4.81702814 102.164804,3.55427135 104.143023,3.9749908 L149.706999,13.6599164 C151.685218,14.0803366 152.947975,16.0247427 152.527554,18.0029619 L137.253883,89.8607054 C136.832864,91.8386254 134.888458,93.1013822 132.910538,92.680962 Z" id="Path" fill="url(#linearGradient-1)"></path>

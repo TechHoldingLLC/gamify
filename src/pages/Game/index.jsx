@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Cards from './Cards';
 import Anchor from '../../components/Anchor';
@@ -6,7 +6,7 @@ import { useGameState, defaultWaitingTime, defaultPlayTime } from '../../hooks/u
 import s from './Game.module.scss';
 import Default from '../../layouts/Default';
 import Timer from '../../components/Timer';
-import { ReactComponent as HeaderLogo } from '../Login/svgs/hand-logo.svg';
+import { ReactComponent as HeaderLogo } from './hand-logo-small.svg';
 import AlertModal from '../../components/AlertModal';
 
 const propTypes = {
@@ -34,6 +34,7 @@ const Game = ({ match }) => {
     play,
     stop,
     timeTaken,
+    scoreToWin,
   ] = useGameState(userData.difficulty);
 
   return (
@@ -73,7 +74,10 @@ const Game = ({ match }) => {
             <li className={s.username}>{`User: ${match.params.username}`}</li>
           </ul>
         </div>
-        <div className={s.gameBoard}>
+        <div
+          className={s.gameBoard}
+          style={{ 'grid-template-columns': `repeat(${numOfCards / 2}, 0fr)` }}
+        >
           <Cards
             cards={cards}
             allOpen={allOpen}
@@ -93,7 +97,7 @@ const Game = ({ match }) => {
           toggleModal={toggleModal}
         />
         <AlertModal
-          isOpen={playing === 2 && score !== 3}
+          isOpen={playing === 2 && score !== scoreToWin}
           username={match.params.username}
           title="Ohhhh no, times up!!!"
           desc1="Your time of 60 seconds is over for the game. Please try again to click on below button."
@@ -103,7 +107,7 @@ const Game = ({ match }) => {
           toggleModal={toggleModal}
         />
         <AlertModal
-          isOpen={playing === 2 && score === 3}
+          isOpen={playing === 2 && score === scoreToWin}
           username={match.params.username}
           title="Congratulations, You’re a Pro."
           desc1="You have completed the game within…"

@@ -2,12 +2,13 @@
 
 .card {
   background-color: transparent;
-  perspective: 1000px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  float: left;
   height: 300px;
   width: 210px;
+  &:focus {
+    outline: none;
+  }
 }
 
 .open {

@@ -91,7 +91,6 @@ const Game = ({ match }) => {
           username={match.params.username}
           desc1={`Let’s start the GAMIFY. You will get ${numOfCards} cards open for ${defaultWaitingTime} secs and will turn
             back. You will have to match the cards in 60 secs.`}
-          desc2="Click below at “PLAY GAME” button to get started!"
           btnLabel="Play Game"
           btnOnClick={play}
           toggleModal={toggleModal}

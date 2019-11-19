@@ -18,7 +18,7 @@ const Timer = ({ onTimeout, playing, defaultPlayTime }) => {
   useEffect(() => {
     if (time === 0 || playing === 2) {
       pause();
-      // onTimeout(time);
+      onTimeout(time);
     } else {
       start();
     }

@@ -29,12 +29,12 @@ export const useGameState = (difficulty) => {
   const [cards, setCards] = useState([]);
   const [attempts, setAttempts] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(true);
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
   const play = () => {
+    console.log('Called play');
     let randomCards = sampleSize(data, numOfCards / 2);
     randomCards = randomCards.map((card) => {
       card.key = Math.random()

@@ -61,6 +61,7 @@ const Login = ({ history }) => {
               <span>Easy</span>
             </div>
             <div
+              id="medium-button"
               className={[s.difficulty, difficulty === MEDIUM ? s.selected : ''].join(' ')}
               onClick={() => handleDifficultyChange(MEDIUM)}
               onKeyPress={() => handleDifficultyChange(MEDIUM)}

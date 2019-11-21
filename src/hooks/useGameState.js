@@ -12,6 +12,12 @@ export const defaultTimeout = 2;
 export const defaultCards = 6;
 export const defaultPlayTime = 60;
 
+const waitingTimes = {
+  [EASY]: 10,
+  [MEDIUM]: 8,
+  [HARD]: 6,
+};
+
 const difficulties = {
   [EASY]: 6,
   [MEDIUM]: 8,
@@ -20,6 +26,7 @@ const difficulties = {
 
 export const useGameState = (difficulty) => {
   const numOfCards = difficulties[difficulty] ? difficulties[difficulty] : defaultCards;
+  const waitingTime = waitingTimes[difficulty] ? waitingTimes[difficulty] : defaultWaitingTime;
   const scoreToWin = numOfCards / 2;
   const [allOpen, setAllOpen] = useState(true);
   const [lock, setLock] = useState(true);
@@ -60,7 +67,7 @@ export const useGameState = (difficulty) => {
       setAllOpen(false);
       setLock(false);
       setPlaying(1);
-    }, defaultWaitingTime * 1000);
+    }, waitingTime * 1000);
   };
 
   const stop = (time = 0) => {

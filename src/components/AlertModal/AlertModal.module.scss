@@ -5,10 +5,12 @@
 }
 
 .playButton {
-  position: fixed;
+  position: absolute;
   bottom: -40px;
-  left: 20%;
   box-shadow: 0 20px 34px 0 $prussian-blue;
   font-size: 25px;
   line-height: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }

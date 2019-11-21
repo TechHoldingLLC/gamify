@@ -34,13 +34,13 @@ const Card = ({ text, open, onClick, index, lock, matched, notMatched }) => {
               ' ',
             )}
           >
-            <div className={s.cardTop}>
+            <div>
               <CardTop />
             </div>
             <div className={s.cardMiddle}>
               <h1>{text}</h1>
             </div>
-            <div className={s.cardBottom}>
+            <div>
               <CardBottom />
             </div>
             {matched && (

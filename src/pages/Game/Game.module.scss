@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .root {
   height: 93%;
   display: flex;
@@ -12,11 +14,13 @@
 }
 
 .gameBoard {
-  color: black;
+  color: $black;
   height: 95%;
   display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 0 25%;
+  grid-template-columns: repeat(3, 0fr);
+  grid-gap: 50px;
+  align-content: center;
+  justify-content: center;
 }
 
 .popupHeader {

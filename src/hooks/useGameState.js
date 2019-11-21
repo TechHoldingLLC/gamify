@@ -12,14 +12,22 @@ export const defaultTimeout = 2;
 export const defaultCards = 6;
 export const defaultPlayTime = 60;
 
+const waitingTimes = {
+  [EASY]: 10,
+  [MEDIUM]: 8,
+  [HARD]: 6,
+};
+
 const difficulties = {
   [EASY]: 6,
-  [MEDIUM]: 12,
-  [HARD]: 18,
+  [MEDIUM]: 8,
+  [HARD]: 12,
 };
 
 export const useGameState = (difficulty) => {
-  const [numOfCards] = useState(difficulties[difficulty] ? difficulties[difficulty] : defaultCards);
+  const numOfCards = difficulties[difficulty] ? difficulties[difficulty] : defaultCards;
+  const waitingTime = waitingTimes[difficulty] ? waitingTimes[difficulty] : defaultWaitingTime;
+  const scoreToWin = numOfCards / 2;
   const [allOpen, setAllOpen] = useState(true);
   const [lock, setLock] = useState(true);
   const [playing, setPlaying] = useState(0);
@@ -35,12 +43,10 @@ export const useGameState = (difficulty) => {
   };
 
   const play = () => {
-    let randomCards = sampleSize(data, numOfCards / 2);
-    randomCards = randomCards.map((card) => {
+    const randomCards = sampleSize(data, numOfCards / 2).map((card) => {
       card.key = Math.random()
         .toString(36)
         .substring(7);
-      card.open = false;
       card.open = false;
       card.matched = false;
       card.notMatched = false;
@@ -61,7 +67,7 @@ export const useGameState = (difficulty) => {
       setAllOpen(false);
       setLock(false);
       setPlaying(1);
-    }, defaultWaitingTime * 1000);
+    }, waitingTime * 1000);
   };
 
   const stop = (time = 0) => {
@@ -91,7 +97,7 @@ export const useGameState = (difficulty) => {
       setScore(score + 1);
       setAttempts(attempts + 1);
       setCards(cards);
-      if (score === numOfCards / 2) {
+      if (score + 1 === numOfCards / 2) {
         setTimeout(() => setPlaying(2), defaultTimeout * 1000);
       }
       setLock(false);
@@ -136,5 +142,6 @@ export const useGameState = (difficulty) => {
     play,
     stop,
     timeTaken,
+    scoreToWin,
   ];
 };

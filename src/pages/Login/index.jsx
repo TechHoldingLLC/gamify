@@ -56,6 +56,7 @@ const Login = ({ history }) => {
               onKeyPress={() => handleDifficultyChange(EASY)}
               tabIndex="0"
               role="button"
+              id="easy-button"
             >
               <EasyCard />
               <span>Easy</span>

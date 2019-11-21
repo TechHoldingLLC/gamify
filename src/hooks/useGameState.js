@@ -34,7 +34,6 @@ export const useGameState = (difficulty) => {
   };
 
   const play = () => {
-    console.log('Called play');
     let randomCards = sampleSize(data, numOfCards / 2);
     randomCards = randomCards.map((card) => {
       card.key = Math.random()
@@ -121,7 +120,7 @@ export const useGameState = (difficulty) => {
     }
   };
 
-  return [
+  return {
     numOfCards,
     cards,
     selected,
@@ -136,5 +135,5 @@ export const useGameState = (difficulty) => {
     play,
     stop,
     timeTaken,
-  ];
+  };
 };

@@ -1,13 +1,17 @@
 @import '../../../styles/variables.scss';
 
+$cardHeight: 300px;
+$cardWidth: 210px;
+
 .card {
   background-color: transparent;
-  perspective: 1000px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  float: left;
-  height: 300px;
-  width: 210px;
+  height: $cardHeight;
+  width: $cardWidth;
+  &:focus {
+    outline: none;
+  }
 }
 
 .open {
@@ -63,20 +67,16 @@
 .backInner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
 }
 
-.cardTop {
-  height: 20%;
-}
-
-.cardBottom {
-  height: 20%;
-}
-
 .cardMiddle {
-  height: 50%;
+  @media (max-width: 1080px) {
+    h1 {
+      font-size: 1em;
+    }
+  }
 }
 
 h1 {

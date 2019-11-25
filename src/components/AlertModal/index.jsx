@@ -31,7 +31,7 @@ const propTypes = {
   username: PropTypes.string.isRequired,
   btnLabel: PropTypes.string.isRequired,
   desc1: PropTypes.string.isRequired,
-  desc2: PropTypes.string.isRequired,
+  desc2: PropTypes.string,
   btnOnClick: PropTypes.func.isRequired,
   toggleModal: PropTypes.func.isRequired,
   title: PropTypes.string,
@@ -41,6 +41,7 @@ const propTypes = {
 const defaultProps = {
   title: null,
   isOpen: false,
+  desc2: null,
 };
 
 const AlertModal = ({

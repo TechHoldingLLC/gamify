@@ -64,8 +64,7 @@ const AlertModal = ({
     shouldCloseOnOverlayClick={false}
   >
     <h2 className={s.modalTitle}>
-      {`Hi `}
-      <span>{username}</span>
+      <span>{`Hi ${username}`}</span>
     </h2>
     {title && <p>{title}</p>}
     <p>

@@ -37,7 +37,6 @@ export const useGameState = (difficulty) => {
   const [cards, setCards] = useState([]);
   const [attempts, setAttempts] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(true);
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -127,7 +126,7 @@ export const useGameState = (difficulty) => {
     }
   };
 
-  return [
+  return {
     numOfCards,
     cards,
     selected,
@@ -143,5 +142,5 @@ export const useGameState = (difficulty) => {
     stop,
     timeTaken,
     scoreToWin,
-  ];
+  };
 };

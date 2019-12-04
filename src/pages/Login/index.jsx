@@ -56,11 +56,13 @@ const Login = ({ history }) => {
               onKeyPress={() => handleDifficultyChange(EASY)}
               tabIndex="0"
               role="button"
+              id="easy-button"
             >
               <EasyCard />
               <span>Easy</span>
             </div>
             <div
+              id="medium-button"
               className={[s.difficulty, difficulty === MEDIUM ? s.selected : ''].join(' ')}
               onClick={() => handleDifficultyChange(MEDIUM)}
               onKeyPress={() => handleDifficultyChange(MEDIUM)}

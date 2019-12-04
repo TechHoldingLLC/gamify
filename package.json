@@ -22,7 +22,8 @@
     "pretest": "npm audit ; npm run lint:scss && npm run lint:js",
     "test": "react-scripts test",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook"
   },
   "browserslist": {
     "production": [
@@ -37,6 +38,9 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^5.2.6",
+    "@storybook/addon-viewport": "^5.2.6",
+    "@storybook/react": "^5.2.6",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",

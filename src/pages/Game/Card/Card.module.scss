@@ -32,12 +32,14 @@ $cardWidth: 210px;
   border: 8px solid $success-light;
   border-radius: 10px;
   height: 95% !important;
+  transition: 0.6s all;
 }
 
 .notMatched {
   border: 8px solid $error-light;
   border-radius: 10px;
   height: 95% !important;
+  transition: 0.6s linear;
 }
 
 .front {

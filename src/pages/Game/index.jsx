@@ -61,7 +61,7 @@ const Game = ({ match }) => {
           <ul className={s.rightHeader}>
             {playing !== 0 && (
               <li>
-                <Anchor size="md" color="success" to="/">
+                <Anchor size="md" color="success" to="#" onClick={play}>
                   Restart
                 </Anchor>
               </li>

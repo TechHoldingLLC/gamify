@@ -25,8 +25,7 @@ const customStyles = {
 
 ReactModal.defaultStyles.overlay.backgroundColor = 'transparent';
 ReactModal.defaultStyles.overlay.top = '60px';
-
-ReactModal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') ReactModal.setAppElement('#root');
 
 const propTypes = {
   username: PropTypes.string.isRequired,

@@ -19,7 +19,7 @@ const propTypes = {
 
 const Game = ({ match }) => {
   const userData = JSON.parse(localStorage.getItem('user'));
-  const [
+  const {
     numOfCards,
     cards,
     selected,
@@ -35,7 +35,7 @@ const Game = ({ match }) => {
     stop,
     timeTaken,
     scoreToWin,
-  ] = useGameState(userData.difficulty);
+  } = useGameState(userData.difficulty);
 
   return (
     <Default>

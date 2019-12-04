@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import Login from './index';
 import Input from '../../components/Input';
 
@@ -26,5 +27,16 @@ describe('Login component', () => {
     const button = wrapper.find('button');
     button.simulate('submit');
     expect(history.push).toHaveBeenCalled();
+  });
+
+  it('shoudl call handleDifficultyChange', async () => {
+    const wrapper = mount(<Login history={history} />);
+    const changeDifficulty = wrapper.find('#medium-button');
+    changeDifficulty.simulate('click');
+    await act(async () => {
+      wrapper.update();
+    });
+
+    expect(wrapper.find('#medium-button').hasClass('seleted'));
   });
 });

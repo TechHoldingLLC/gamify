@@ -3,6 +3,9 @@ import { shallow } from 'enzyme';
 import Game from './index';
 
 describe('Game component', () => {
+  beforeEach(() => {
+    localStorage.setItem('user', JSON.stringify({ name: 'test', difficulty: 'easy' }));
+  });
   const match = {
     params: {
       username: 'abc',

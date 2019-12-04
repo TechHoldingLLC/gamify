@@ -5,7 +5,6 @@ import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
 import Game from '../pages/Game';
-import Cards from '../pages/Game/Cards';
 
 jest.useFakeTimers();
 
@@ -13,7 +12,7 @@ jest.mock('../components/Anchor', () => ({ children }) => <>{children}</>);
 
 describe('useGameState hook', () => {
   beforeEach(() => {
-    localStorage.setItem('user', JSON.stringify({ name: 'test', difficulty: 'easy' }));
+    localStorage.setItem('user', JSON.stringify({ name: 'test', difficulty: 'hard' }));
   });
   const match = {
     params: {
@@ -42,22 +41,5 @@ describe('useGameState hook', () => {
       wrapper.update();
     });
     expect(wrapper.find('.card').exists()).toBe(false);
-  });
-
-  it('should flip card on click', async () => {
-    const wrapper = mount(<Game match={match} />);
-    const playButton = wrapper.find('.playButton');
-    playButton.first().simulate('click');
-    jest.advanceTimersByTime(10000);
-    await act(() => wrapper.update());
-    await act(() => {
-      wrapper
-        .find('.card')
-        .first()
-        .simulate('click');
-
-      wrapper.update();
-    });
-    console.log(wrapper.find(Cards).props());
   });
 });

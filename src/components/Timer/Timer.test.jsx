@@ -4,6 +4,6 @@ import Timer from './index';
 
 describe('Timer component', () => {
   it('Should render without carshing', () => {
-    mount(<Timer />);
+    mount(<Timer onTimeout={() => {}} playing={2} defaultPlayTime={2} />);
   });
 });

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import ReactModal from 'react-modal';
 import PropTypes from 'prop-types';

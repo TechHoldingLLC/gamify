@@ -4,10 +4,10 @@ import s from './Login.module.scss';
 import Input from '../../components/Input';
 import Default from '../../layouts/Default';
 import Button from '../../components/Button';
-import { ReactComponent as HandLogo } from '../../assets/svgs/hand-logo.svg';
-import { ReactComponent as EasyCard } from '../../assets/svgs/easy-cards.svg';
-import { ReactComponent as MediumCard } from '../../assets/svgs/medium-cards.svg';
-import { ReactComponent as HardCard } from '../../assets/svgs/hard-cards.svg';
+import { ReactComponent as HandLogo } from './svgs/hand-logo.svg';
+import { ReactComponent as EasyCard } from './svgs/easy-cards.svg';
+import { ReactComponent as MediumCard } from './svgs/medium-cards.svg';
+import { ReactComponent as HardCard } from './svgs/hard-cards.svg';
 import { EASY, MEDIUM, HARD } from '../../constants/difficulty';
 
 const propTypes = {

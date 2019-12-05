@@ -4,11 +4,11 @@ import { mount } from 'enzyme';
 
 import { act } from 'react-dom/test-utils';
 
-import Game from '../../pages/Game';
+import Game from '../pages/Game';
 
 jest.useFakeTimers();
 
-jest.mock('../../components/Anchor', () => ({ children }) => <>{children}</>);
+jest.mock('../components/Anchor', () => ({ children }) => <>{children}</>);
 
 describe('useGameState hook', () => {
   beforeEach(() => {

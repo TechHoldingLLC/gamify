@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../../components/Card';
+import Cards from './Cards';
 import Anchor from '../../components/Anchor';
 import { useGameState, defaultWaitingTime, defaultPlayTime } from '../../hooks/useGameState';
 import s from './Game.module.scss';
 import Default from '../../layouts/Default';
 import Timer from '../../components/Timer';
-import { ReactComponent as HeaderLogo } from '../../assets/svgs/hand-logo-small.svg';
+import { ReactComponent as HeaderLogo } from './hand-logo-small.svg';
 import AlertModal from '../../components/AlertModal';
 
 const propTypes = {
@@ -22,6 +22,7 @@ const Game = ({ match }) => {
   const {
     numOfCards,
     cards,
+    selected,
     allOpen,
     flipCard,
     lock,
@@ -75,21 +76,15 @@ const Game = ({ match }) => {
         </div>
         <div
           className={s.gameBoard}
-          style={{ gridTemplateColumns: `repeat(${numOfCards / 2}, 0fr)` }}
+          style={{ 'grid-template-columns': `repeat(${numOfCards / 2}, 0fr)` }}
         >
-          {cards.map((card, i) => (
-            <Card
-              // eslint-disable-next-line react/no-array-index-key
-              key={`${card.text}${i}`}
-              text={card.text}
-              open={allOpen || card.open}
-              onClick={flipCard}
-              index={i}
-              lock={lock}
-              notMatched={card.notMatched}
-              matched={card.matched}
-            />
-          ))}
+          <Cards
+            cards={cards}
+            allOpen={allOpen}
+            flipCard={flipCard}
+            lock={lock}
+            selected={selected}
+          />
         </div>
         <AlertModal
           isOpen={isModalOpen && playing === 0}

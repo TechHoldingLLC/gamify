@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Card.module.scss';
-import { ReactComponent as CardTop } from '../../assets/svgs/card-top-pattern.svg';
-import { ReactComponent as CardBottom } from '../../assets/svgs/card-bottom-pattern.svg';
-import { ReactComponent as CheckIcon } from '../../assets/svgs/check-icon.svg';
-import { ReactComponent as CloseIcon } from '../../assets/svgs/close-icon.svg';
+import { ReactComponent as CardTop } from './svgs/card-top-pattern.svg';
+import { ReactComponent as CardBottom } from './svgs/card-bottom-pattern.svg';
+import { ReactComponent as CheckIcon } from './svgs/check-icon.svg';
+import { ReactComponent as CloseIcon } from './svgs/close-icon.svg';
 
 const propTypes = {
   text: PropTypes.string.isRequired,

@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Footer.module.scss';
-import { ReactComponent as LogoIcon } from './TH-Logo.svg';
+import { ReactComponent as LogoIcon } from '../../assets/svgs/TH-Logo.svg';
 
 const Footer = () => (
   <div className={s.root}>

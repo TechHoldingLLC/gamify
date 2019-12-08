@@ -12,13 +12,13 @@ export const defaultTimeout = 2;
 export const defaultCards = 6;
 export const defaultPlayTime = 60;
 
-const waitingTimes = {
-  [EASY]: 10,
-  [MEDIUM]: 8,
-  [HARD]: 6,
+export const waitingTimes = {
+  [EASY]: 6,
+  [MEDIUM]: 5,
+  [HARD]: 4,
 };
 
-const difficulties = {
+export const difficulties = {
   [EASY]: 6,
   [MEDIUM]: 8,
   [HARD]: 12,
@@ -37,10 +37,6 @@ export const useGameState = (difficulty) => {
   const [cards, setCards] = useState([]);
   const [attempts, setAttempts] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const toggleModal = useCallback(() => {
-    setIsModalOpen(!isModalOpen);
-  }, [isModalOpen]);
 
   const play = useCallback(() => {
     const randomCards = sampleSize(data, numOfCards / 2).map((card) => {
@@ -143,7 +139,6 @@ export const useGameState = (difficulty) => {
     score,
     attempts,
     isModalOpen,
-    toggleModal,
     playing,
     play,
     stop,

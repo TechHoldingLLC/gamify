@@ -1,4 +1,4 @@
-@import '../../../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 $cardHeight: 300px;
 $cardWidth: 210px;
@@ -39,11 +39,11 @@ $cardWidth: 210px;
   border: 8px solid $error-light;
   border-radius: 10px;
   height: 95% !important;
-  transition: 0.6s linear;
+  transition: 0.6s all;
 }
 
 .front {
-  background: center url('./svgs/card-pattern.svg');
+  background: center url('../../assets/svgs/card-pattern.svg');
   color: white;
   border-radius: 10px;
   position: absolute;

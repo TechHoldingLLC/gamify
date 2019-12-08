@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../components/Card';
 import Anchor from '../../components/Anchor';
-import { useGameState, defaultWaitingTime, defaultPlayTime } from '../../hooks/useGameState';
+import { useGameState, waitingTimes, defaultPlayTime } from '../../hooks/useGameState';
 import s from './Game.module.scss';
 import Default from '../../layouts/Default';
 import Timer from '../../components/Timer';
@@ -28,7 +28,6 @@ const Game = ({ match }) => {
     score,
     attempts,
     isModalOpen,
-    toggleModal,
     playing,
     play,
     stop,
@@ -94,31 +93,30 @@ const Game = ({ match }) => {
         <AlertModal
           isOpen={isModalOpen && playing === 0}
           username={match.params.username}
-          desc1={`Let’s start the GAMIFY. You will get ${numOfCards} cards open for ${defaultWaitingTime} secs and will turn
-            back. You will have to match the cards in 60 secs.`}
+          desc1={`Let’s start the GAMIFY. You will get ${numOfCards} cards open for ${
+            waitingTimes[userData.difficulty]
+          } seconds and will turn
+            back. You will have to match the cards in ${defaultPlayTime} seconds.`}
           btnLabel="Play Game"
           btnOnClick={play}
-          toggleModal={toggleModal}
         />
         <AlertModal
           isOpen={playing === 2 && score !== scoreToWin}
           username={match.params.username}
           title="Ohhhh no, times up!!!"
           desc1="Your time of 60 seconds is over for the game. Please try again to click on below button."
-          desc2={`Attempt: ${attempts} Score: ${score} time: ${defaultPlayTime}`}
+          desc2={`Attempt: ${attempts} Score: ${score} time: ${defaultPlayTime}s`}
           btnLabel="Retake The Game"
           btnOnClick={play}
-          toggleModal={toggleModal}
         />
         <AlertModal
           isOpen={playing === 2 && score === scoreToWin}
           username={match.params.username}
           title="Congratulations, You’re a Pro."
           desc1="You have completed the game within…"
-          desc2={` Attempt: ${attempts} Score: ${score} Time: ${timeTaken}`}
+          desc2={` Attempt: ${attempts} Score: ${score} Time: ${timeTaken}s`}
           btnLabel="Retake The Game"
           btnOnClick={play}
-          toggleModal={toggleModal}
         />
       </div>
     </Default>

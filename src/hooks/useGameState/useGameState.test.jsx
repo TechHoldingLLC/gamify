@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-handler-names */
 import React from 'react';
 import { mount } from 'enzyme';
-
 import { act } from 'react-dom/test-utils';
-
 import Game from '../../pages/Game';
 
 jest.useFakeTimers();
@@ -31,11 +29,11 @@ describe('useGameState hook', () => {
     expect(wrapper.find('.card').exists()).toBe(true);
   });
 
-  it('should call stop function on timeout', async () => {
+  it('should call stop function on timeout', () => {
     const wrapper = mount(<Game match={match} />);
     const playButton = wrapper.find('.playButton');
     playButton.first().simulate('click');
-    await act(() => {
+    act(() => {
       wrapper.update();
       jest.runAllTimers();
       wrapper.update();

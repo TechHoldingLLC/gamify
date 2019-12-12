@@ -15,7 +15,7 @@
     "waait": "^1.0.5"
   },
   "scripts": {
-    "cov": "yarn test --watchAll=false --coverage",
+    "cov": "yarn test -- --watchAll=false --coverage",
     "start": "react-scripts start",
     "lint:js": "eslint --quiet --ext .js,.jsx --ignore-path .gitignore ./src",
     "lint:scss": "stylelint './src/**/*.scss'",

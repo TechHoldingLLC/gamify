@@ -37,6 +37,54 @@ describe('Login component', () => {
       wrapper.update();
     });
 
-    expect(wrapper.find('#medium-button').hasClass('seleted'));
+    expect(wrapper.find('#medium-button').hasClass('selected')).toBe(true);
+  });
+
+  it('Should change difficulties on button clicks', async () => {
+    const wrapper = mount(<Login history={history} />);
+    const changeDifficulty = wrapper.find('#medium-button');
+    changeDifficulty.simulate('click');
+    await act(async () => {
+      wrapper.update();
+    });
+
+    // Medium to Easy
+
+    wrapper.find('#easy-button').simulate('click');
+    await act(async () => {
+      wrapper.update();
+    });
+    expect(wrapper.find('#easy-button').hasClass('selected')).toBe(true);
+
+    // Easy to Hard
+    wrapper.find('#hard-button').simulate('click');
+    await act(async () => {
+      wrapper.update();
+    });
+    expect(wrapper.find('#hard-button').hasClass('selected')).toBe(true);
+  });
+
+  it('Should change difficulties on keypress', async () => {
+    const wrapper = mount(<Login history={history} />);
+    const changeDifficulty = wrapper.find('#medium-button');
+    changeDifficulty.simulate('keypress', { key: 'Enter' });
+    await act(async () => {
+      wrapper.update();
+    });
+
+    // Medium to Easy
+
+    wrapper.find('#easy-button').simulate('keypress', { key: 'Enter' });
+    await act(async () => {
+      wrapper.update();
+    });
+    expect(wrapper.find('#easy-button').hasClass('selected')).toBe(true);
+
+    // Easy to Hard
+    wrapper.find('#hard-button').simulate('keypress', { key: 'Enter' });
+    await act(async () => {
+      wrapper.update();
+    });
+    expect(wrapper.find('#hard-button').hasClass('selected')).toBe(true);
   });
 });

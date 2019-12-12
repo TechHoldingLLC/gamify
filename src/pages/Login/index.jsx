@@ -78,6 +78,7 @@ const Login = ({ history }) => {
               onKeyPress={() => handleDifficultyChange(HARD)}
               tabIndex="0"
               role="button"
+              id="hard-button"
             >
               <HardCard />
               <span>Hard</span>

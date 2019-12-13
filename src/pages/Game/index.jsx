@@ -15,10 +15,12 @@ const propTypes = {
       username: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  user: PropTypes.shape({
+    difficulty: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
-const Game = ({ match }) => {
-  const userData = JSON.parse(localStorage.getItem('user'));
+const Game = ({ match, user }) => {
   const {
     numOfCards,
     cards,
@@ -33,7 +35,7 @@ const Game = ({ match }) => {
     stop,
     timeTaken,
     scoreToWin,
-  } = useGameState(userData.difficulty);
+  } = useGameState(user.difficulty);
 
   return (
     <Default>
@@ -94,7 +96,7 @@ const Game = ({ match }) => {
           isOpen={isModalOpen && playing === 0}
           username={match.params.username}
           desc1={`Let’s start the GAMIFY. You will get ${numOfCards} cards open for ${
-            waitingTimes[userData.difficulty]
+            waitingTimes[user.difficulty]
           } seconds and will turn
             back. You will have to match the cards in ${defaultPlayTime} seconds.`}
           btnLabel="Play Game"

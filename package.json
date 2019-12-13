@@ -71,6 +71,7 @@
     }
   },
   "resolutions": {
-    "handlebars": "~4.5.2"
+    "handlebars": "~4.5.2",
+    "serialize-javascript": ">=2.1.1"
   }
 }

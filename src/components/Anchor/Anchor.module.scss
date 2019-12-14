@@ -23,27 +23,25 @@
 }
 
 .lg {
-  width: 500px;
-  height: 80px;
+  padding: 10px 80px;
   font-size: 25px;
   border-radius: 50px;
 }
 
 .md {
-  padding: 10px 30px;
+  padding: 10px 60px;
   font-size: 20px;
   border-radius: 50px;
 }
 
 .sm {
-  padding: 10px 30px;
+  padding: 10px 40px;
   font-size: 20px;
   border-radius: 50px;
 }
 
 .xs {
-  width: 50px;
-  height: 25px;
-  font-size: 20px;
+  padding: 10px 20px;
+  font-size: 10px;
   border-radius: 50px;
 }

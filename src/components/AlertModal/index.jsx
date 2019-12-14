@@ -24,7 +24,7 @@ const customStyles = {
 
 ReactModal.defaultStyles.overlay.backgroundColor = 'transparent';
 ReactModal.defaultStyles.overlay.top = '60px';
-if (process.env.NODE_ENV !== 'test') ReactModal.setAppElement('#root');
+ReactModal.setAppElement('body');
 
 const propTypes = {
   username: PropTypes.string.isRequired,
@@ -32,7 +32,6 @@ const propTypes = {
   desc1: PropTypes.string.isRequired,
   desc2: PropTypes.string,
   btnOnClick: PropTypes.func.isRequired,
-  toggleModal: PropTypes.func.isRequired,
   title: PropTypes.string,
   isOpen: PropTypes.bool,
 };
@@ -43,21 +42,11 @@ const defaultProps = {
   desc2: null,
 };
 
-const AlertModal = ({
-  username,
-  title,
-  btnLabel,
-  btnOnClick,
-  desc1,
-  desc2,
-  isOpen,
-  toggleModal,
-}) => (
+const AlertModal = ({ username, title, btnLabel, btnOnClick, desc1, desc2, isOpen }) => (
   <ReactModal
     style={customStyles}
     isOpen={isOpen}
     onAfterOpen={null}
-    onRequestClose={toggleModal}
     contentLabel=""
     shouldCloseOnOverlayClick={false}
   >

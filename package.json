@@ -15,11 +15,11 @@
     "waait": "^1.0.5"
   },
   "scripts": {
-    "cov": "npm test -- --watchAll=false --coverage",
+    "cov": "yarn test --watchAll=false --coverage",
     "start": "react-scripts start",
     "lint:js": "eslint --quiet --ext .js,.jsx --ignore-path .gitignore ./src",
     "lint:scss": "stylelint './src/**/*.scss'",
-    "pretest": "npm audit ; npm run lint:scss && npm run lint:js",
+    "pretest": "yarn audit; yarn lint:scss && yarn lint:js",
     "test": "react-scripts test",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
@@ -55,5 +55,23 @@
     "stylelint": "^11.0.0",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.11.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/*.stories.jsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "resolutions": {
+    "handlebars": "~4.5.2",
+    "serialize-javascript": ">=2.1.1"
   }
 }

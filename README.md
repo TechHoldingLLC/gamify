@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![gamify](https://repository-images.githubusercontent.com/210279977/24d8ee00-219d-11ea-981b-3dd854b3f865
+)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Installation
 ### `yarn install | yarn`

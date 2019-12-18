@@ -1,4 +1,4 @@
-![gamify](https://repository-images.githubusercontent.com/210279977/24d8ee00-219d-11ea-981b-3dd854b3f865
+![gamify](https://repository-images.githubusercontent.com/210279977/e268de80-21a7-11ea-8d6f-b5031337e8ca
 )
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)

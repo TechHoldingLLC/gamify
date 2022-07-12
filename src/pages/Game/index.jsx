@@ -37,10 +37,6 @@ const Game = ({ match, user }) => {
     timeTaken,
     scoreToWin,
   } = useGameState(user.difficulty);
-  console.log('-playing--->', playing);
-  console.log('-----timeTaken-->', timeTaken);
-  console.log('-----score-->', score);
-  console.log('-----scoreToWin-->', scoreToWin);
   return (
     <Default>
       <div className={s.game} id={`${id}game`}>

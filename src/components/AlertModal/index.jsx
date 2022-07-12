@@ -43,8 +43,6 @@ const defaultProps = {
 };
 
 const AlertModal = ({ username, title, btnLabel, btnOnClick, desc1, desc2, isOpen }) => {
-  console.log('---btnLabel-->', btnLabel);
-  console.log('---isOpen-->', isOpen);
   return (
     <ReactModal
       id={btnLabel}

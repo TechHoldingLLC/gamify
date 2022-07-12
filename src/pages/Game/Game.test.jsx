@@ -61,13 +61,7 @@ describe('Game component', () => {
     const { getByTestId, debug } = renderGame();
     const playButton = getByTestId('playButton');
     fireEvent.click(playButton);
-    console.log('--First-->', gameState);
     debug();
-    console.log(
-      '-------->',
-      renderHook(() => gameState.stop(0)),
-    );
-    console.log('--Second-->');
     debug();
   });
 });

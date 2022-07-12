@@ -14,13 +14,9 @@ const Timer = ({ onTimeout, playing, defaultPlayTime }) => {
     initialTime: defaultPlayTime,
     timerType: 'DECREMENTAL',
   });
-  console.log('time--out---', time);
 
   useEffect(() => {
-    console.log('time-----', time);
-    console.log('playing-----', playing);
     if (time === 0 || playing === 2) {
-      console.log('ssss-----');
       pause();
       onTimeout(time);
     } else {

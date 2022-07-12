@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import PropTypes from 'prop-types';
 import s from './Login.module.scss';
 import Input from '../../components/Input';
@@ -15,6 +15,7 @@ const propTypes = {
 };
 
 const Login = ({ history }) => {
+  const id = useId();
   const [userName, setUserName] = useState('');
   const [difficulty, setDifficulty] = useState('easy');
   const handleOnSubmit = (e) => {
@@ -33,8 +34,8 @@ const Login = ({ history }) => {
 
   return (
     <Default>
-      <div className={s.root}>
-        <div className={s.logoContainer}>
+      <div className={s.root} id={`${id}logInRoot`}>
+        <div className={s.logoContainer} id={`${id}logoContainer`}>
           <HandLogo />
           <div className={s.titleContainer}>
             <span className={s.welcome}>Welcome to</span>
@@ -43,13 +44,14 @@ const Login = ({ history }) => {
         </div>
         <form onSubmit={handleOnSubmit} className={s.formContainer}>
           <Input
+            id={`${id}username`}
             name="username"
             placeholder="Enter Name"
             value={userName}
             onChange={handleInputChange}
             required
           />
-          <div className={s.difficultyContainer}>
+          <div className={s.difficultyContainer} id={`${id}difficultyContainer`}>
             <div
               className={[s.difficulty, difficulty === EASY ? s.selected : ''].join(' ')}
               onClick={() => handleDifficultyChange(EASY)}

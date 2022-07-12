@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { shallow, mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { render, fireEvent, cleanup } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
 import Game from './index';
-
-jest.useFakeTimers();
+import { useGameState } from '../../hooks/useGameState';
 
 jest.mock('../../components/Anchor', () => ({ children }) => <>{children}</>);
 
@@ -21,26 +21,53 @@ describe('Game component', () => {
     },
   };
 
-  it('renders without crashing', () => {
-    shallow(<Game {...props} />);
+  beforeEach(() => {
+    cleanup();
+    jest.useFakeTimers();
   });
 
-  it('should start playing game on play button click', () => {
-    const wrapper = mount(<Game {...props} />);
-    const playButton = wrapper.find('.playButton');
-    playButton.first().simulate('click');
-    wrapper.update();
-    expect(wrapper.find('.card').exists()).toBe(true);
+  afterEach(() => {
+    cleanup();
+    jest.clearAllMocks();
   });
-  it('should call stop game on timeout', async () => {
-    const wrapper = mount(<Game {...props} />);
-    const playButton = wrapper.find('.playButton');
-    playButton.first().simulate('click');
+
+  const renderGame = () => {
+    return render(<Game {...props} />);
+  };
+
+  test('renders without crashing', () => {
+    renderGame();
+  });
+
+  test('should start playing game on play button click', () => {
+    const { container, getByTestId } = renderGame();
+    const playButton = getByTestId('playButton');
+    fireEvent.click(playButton);
+    expect(container.getElementsByClassName('card')).not.toBeNull();
+  });
+
+  test('should call stop game on timeout', () => {
+    const { container, getByTestId } = renderGame();
+    const playButton = getByTestId('playButton');
+    fireEvent.click(playButton);
     act(() => {
-      wrapper.update();
       jest.runAllTimers();
-      wrapper.update();
     });
-    expect(wrapper.find('.card').exists()).toBe(false);
+    expect(container.getElementsByClassName('card')).toMatchObject({});
+  });
+
+  test('should call stop game on timeout 22', async () => {
+    const gameState = useGameState('easy');
+    const { getByTestId, debug } = renderGame();
+    const playButton = getByTestId('playButton');
+    fireEvent.click(playButton);
+    console.log('--First-->', gameState);
+    debug();
+    console.log(
+      '-------->',
+      renderHook(() => gameState.stop(0)),
+    );
+    console.log('--Second-->');
+    debug();
   });
 });

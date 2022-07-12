@@ -42,28 +42,39 @@ const defaultProps = {
   desc2: null,
 };
 
-const AlertModal = ({ username, title, btnLabel, btnOnClick, desc1, desc2, isOpen }) => (
-  <ReactModal
-    style={customStyles}
-    isOpen={isOpen}
-    onAfterOpen={null}
-    contentLabel=""
-    shouldCloseOnOverlayClick={false}
-  >
-    <h2 className={s.modalTitle}>
-      <span>{`Hi ${username}`}</span>
-    </h2>
-    {title && <p>{title}</p>}
-    <p>
-      {desc1}
-      <br />
-      {desc2}
-    </p>
-    <Button size="lg" color="success" className={s.playButton} onClick={btnOnClick}>
-      {btnLabel}
-    </Button>
-  </ReactModal>
-);
+const AlertModal = ({ username, title, btnLabel, btnOnClick, desc1, desc2, isOpen }) => {
+  console.log('---btnLabel-->', btnLabel);
+  console.log('---isOpen-->', isOpen);
+  return (
+    <ReactModal
+      id={btnLabel}
+      style={customStyles}
+      isOpen={isOpen}
+      onAfterOpen={null}
+      contentLabel=""
+      shouldCloseOnOverlayClick={false}
+    >
+      <h2 className={s.modalTitle}>
+        <span>{`Hi ${username}`}</span>
+      </h2>
+      {title && <p>{title}</p>}
+      <p>
+        {desc1}
+        <br />
+        {desc2}
+      </p>
+      <Button
+        data-testid="playButton"
+        size="lg"
+        color="success"
+        className={s.playButton}
+        onClick={btnOnClick}
+      >
+        {btnLabel}
+      </Button>
+    </ReactModal>
+  );
+};
 
 AlertModal.propTypes = propTypes;
 AlertModal.defaultProps = defaultProps;

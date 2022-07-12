@@ -2,6 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Card from './index';
 
+jest.mock('react', () => {
+  return { ...jest.requireActual('react'), useId: jest.fn() };
+});
+
 describe('Card component', () => {
   it('Should render without carshing', () => {
     shallow(

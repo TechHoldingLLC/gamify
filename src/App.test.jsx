@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import App from './App';
 
 describe('App component', () => {
-  it('renders without crashing', () => {
-    shallow(<App />);
+  test('renders without crashing', () => {
+    render(<App />);
   });
 });

@@ -68,6 +68,7 @@ export const useGameState = (difficulty) => {
 
   const stop = useCallback(
     (time = 0) => {
+      console.log('playing---time---', playing, time);
       setTimeTaken(defaultPlayTime - time);
       if (playing !== 2) {
         setPlaying(2);

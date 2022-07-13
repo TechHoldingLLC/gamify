@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Button from './index';
 
 describe('Button component', () => {
-  it('renders without crashing', () => {
-    shallow(
+  test('renders without crashing', () => {
+    render(
       <Button client={{}} location={{}} history={{}}>
         Some mock string
       </Button>,

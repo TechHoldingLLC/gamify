@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Error404 from './index';
 
 describe('Error404 component', () => {
-  it('renders without crashing', () => {
-    shallow(<Error404 />);
+  test('renders without crashing', () => {
+    render(<Error404 />);
   });
 });

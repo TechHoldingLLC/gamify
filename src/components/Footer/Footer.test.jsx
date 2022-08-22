@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Footer from './index';
 
 describe('Footer component', () => {
-  it('Should render without carshing', () => {
-    shallow(<Footer />);
+  test('Should render without carshing', () => {
+    render(<Footer />);
   });
 });

@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Anchor from './index';
 
 describe('Anchor component', () => {
-  it('Should render without crashing', () => {
-    shallow(
+  test('Should render without crashing', () => {
+    render(
       <Anchor to="/">
         <span>Test</span>
       </Anchor>,

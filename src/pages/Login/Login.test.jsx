@@ -4,6 +4,10 @@ import { act } from 'react-dom/test-utils';
 import Login from './index';
 import Input from '../../components/Input';
 
+jest.mock('react', () => {
+  return { ...jest.requireActual('react'), useId: jest.fn() };
+});
+
 describe('Login component', () => {
   const history = {
     push: jest.fn(),

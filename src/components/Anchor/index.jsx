@@ -11,6 +11,7 @@ const propTypes = {
   theme: PropTypes.string,
   size: PropTypes.string,
   color: PropTypes.string,
+  id: PropTypes.string,
 };
 
 const defaultProps = {
@@ -19,17 +20,21 @@ const defaultProps = {
   theme: 'default',
   size: '',
   color: '',
+  id: '',
 };
 
-const Anchor = ({ className, children, type, theme, size, color, ...props }) => (
-  <Link
-    type={type}
-    className={[s.btn, s[theme], className, s[color], s[size]].join(' ')}
-    {...props}
-  >
-    {children}
-  </Link>
-);
+const Anchor = ({ className, children, type, theme, size, color, id, ...props }) => {
+  return (
+    <Link
+      id={id.toString()}
+      type={type}
+      className={[s.btn, s[theme], className, s[color], s[size]].join(' ')}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+};
 
 Anchor.propTypes = propTypes;
 Anchor.defaultProps = defaultProps;

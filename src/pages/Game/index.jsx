@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../components/Card';
 import Anchor from '../../components/Anchor';
@@ -21,6 +21,7 @@ const propTypes = {
 };
 
 const Game = ({ match, user }) => {
+  const id = useId();
   const {
     numOfCards,
     cards,
@@ -36,12 +37,11 @@ const Game = ({ match, user }) => {
     timeTaken,
     scoreToWin,
   } = useGameState(user.difficulty);
-
   return (
     <Default>
-      <div className={s.game}>
-        <div className={s.header}>
-          <ul className={s.leftHeader}>
+      <div className={s.game} id={`${id}game`}>
+        <div className={s.header} id={`${id}header`}>
+          <ul className={s.leftHeader} id={`${id}leftHeader`}>
             <li>
               <HeaderLogo />
             </li>
@@ -58,16 +58,16 @@ const Game = ({ match, user }) => {
               </li>
             )}
           </ul>
-          <ul className={s.rightHeader}>
+          <ul className={s.rightHeader} id={`${id}rightHeader`}>
             {playing !== 0 && (
               <li>
-                <Anchor size="md" color="success" to="#" onClick={play}>
+                <Anchor id={`${id}Restart`} size="md" color="success" to="#" onClick={play}>
                   Restart
                 </Anchor>
               </li>
             )}
             <li>
-              <Anchor size="sm" color="danger" to="/logout">
+              <Anchor id={`${id}Exit`} size="sm" color="danger" to="/logout">
                 Exit
               </Anchor>
             </li>
@@ -75,6 +75,7 @@ const Game = ({ match, user }) => {
           </ul>
         </div>
         <div
+          id={`${id}gameBoard`}
           className={s.gameBoard}
           style={{ gridTemplateColumns: `repeat(${numOfCards / 2}, 0fr)` }}
         >

@@ -4,7 +4,7 @@ import sampleSize from 'lodash/sampleSize';
 import cloneDeep from 'lodash/cloneDeep';
 import shuffle from 'lodash/shuffle';
 import concat from 'lodash/concat';
-import data from '../../data/data';
+import data from '../../data/data.json';
 import { EASY, MEDIUM, HARD } from '../../constants/difficulty';
 
 export const defaultWaitingTime = 5;

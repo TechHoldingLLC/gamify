@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import PropTypes from 'prop-types';
 import s from './Card.module.scss';
 import { ReactComponent as CardTop } from '../../assets/svgs/card-top-pattern.svg';
@@ -17,9 +17,11 @@ const propTypes = {
 };
 
 const Card = ({ text, open, onClick, index, lock, matched, notMatched }) => {
+  const id = useId();
   const onCardClick = () => (matched || lock ? null : onClick(index));
   return (
     <div
+      id={`${id}card`}
       role="button"
       onClick={onCardClick}
       onKeyPress={onCardClick}
@@ -27,8 +29,8 @@ const Card = ({ text, open, onClick, index, lock, matched, notMatched }) => {
       className={s.card}
     >
       <div className={[s.cardInner, matched || open ? s.open : ''].join(' ')}>
-        <div className={s.front} />
-        <div className={s.back}>
+        <div className={s.front} id={`${id}front`} />
+        <div className={s.back} id={`${id}back`}>
           <div
             className={[s.backInner, matched ? s.matched : '', notMatched ? s.notMatched : ''].join(
               ' ',
@@ -37,20 +39,20 @@ const Card = ({ text, open, onClick, index, lock, matched, notMatched }) => {
             <div>
               <CardTop />
             </div>
-            <div className={s.cardMiddle}>
+            <div className={s.cardMiddle} id={`${id}cardMiddle`}>
               <h1>{text}</h1>
             </div>
             <div>
               <CardBottom />
             </div>
             {matched && (
-              <div className={s.right}>
+              <div className={s.right} id={`${id}right`}>
                 <CheckIcon />
                 <span> Right Match</span>
               </div>
             )}
             {notMatched && (
-              <div className={s.wrong}>
+              <div className={s.wrong} id={`${id}wrong`}>
                 <CloseIcon />
                 <span>Wrong Match</span>
               </div>
